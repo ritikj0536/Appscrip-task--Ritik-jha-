@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import TopBar from '../components/TopBar/TopBar';
 import Header from '../components/Header/Header';
@@ -5,29 +6,24 @@ import HeroSection from '../components/HeroSection/HeroSection';
 import ProductGrid from '../components/ProductGrid/ProductGrid';
 import Footer from '../components/Footer/Footer';
 
-export default function Home({ products }) {
+export default function Home({ products: initialProducts }) {
+  const [products, setProducts] = useState(initialProducts || []);
+
+  useEffect(() => {
+    if (products.length === 0) {
+      fetch('https://fakestoreapi.com/products')
+        .then((res) => res.json())
+        .then((data) => setProducts(data))
+        .catch((err) => console.error('Failed to fetch products:', err));
+    }
+  }, []);
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Discover Our Products | Mettā Muse",
     "description": "Browse our curated collection of handcrafted products from artisans worldwide.",
-    "url": "https://appscrip-task.netlify.app",
-    "numberOfItems": products.length,
-    "itemListElement": products.map((product, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Product",
-        "name": product.title,
-        "image": product.image,
-        "description": product.description,
-        "offers": {
-          "@type": "Offer",
-          "price": product.price,
-          "priceCurrency": "USD"
-        }
-      }
-    }))
+    "url": "https://appscrip-task.netlify.app"
   };
 
   return (
@@ -65,14 +61,11 @@ export async function getStaticProps() {
   try {
     const res = await fetch('https://fakestoreapi.com/products');
     const products = await res.json();
-    return { 
+    return {
       props: { products },
       revalidate: 60
     };
   } catch (error) {
-    return { 
-      props: { products: [] },
-      revalidate: 60
-    };
+    return { props: { products: [] } };
   }
 }
