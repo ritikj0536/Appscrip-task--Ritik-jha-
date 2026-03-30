@@ -1,0 +1,97 @@
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  padding-right: 24px;
+  border-right: 1px solid var(--color-grey-border);
+}
+
+.customizable {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-grey-border);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.group {
+  border-bottom: 1px solid var(--color-grey-border);
+}
+
+.groupHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  text-align: left;
+}
+
+.groupName {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.groupValue {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-grey-medium);
+  margin-top: 2px;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.options {
+  padding-bottom: 16px;
+}
+
+.unselect {
+  font-size: 0.8rem;
+  color: var(--color-grey-medium);
+  text-decoration: underline;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.optionCheckbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+    width: 100%;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--color-grey-border);
+    padding-bottom: 16px;
+  }
+  .visible {
+    display: block;
+  }
+}

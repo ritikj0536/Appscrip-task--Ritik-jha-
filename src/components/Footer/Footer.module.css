@@ -1,0 +1,275 @@
+.footer {
+  margin-top: 60px;
+}
+
+.newsletter {
+  background-color: #1a1a1a;
+  color: var(--color-white);
+  padding: 44px 20px;
+}
+
+.newsletterContent {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.newsletterLeft {
+  flex: 1;
+}
+
+.newsletterTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.newsletterText {
+  font-size: 0.875rem;
+  color: #cccccc;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.newsletterInput {
+  padding: 12px 16px;
+  border: 1px solid #555555;
+  background: transparent;
+  color: var(--color-white);
+  font-size: 0.875rem;
+  width: 300px;
+  font-family: inherit;
+  outline: none;
+}
+
+.newsletterInput::placeholder {
+  color: #888888;
+}
+
+.newsletterBtn {
+  padding: 12px 28px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.newsletterRight {
+  display: flex;
+  gap: 60px;
+}
+
+.contactBlock {
+  min-width: 200px;
+}
+
+.contactTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.contactText {
+  font-size: 0.875rem;
+  color: #cccccc;
+  margin-bottom: 6px;
+}
+
+.currencyRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.currencyNote {
+  font-size: 0.7rem;
+  color: #999999;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.separator {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid #333333;
+}
+
+.bottomSection {
+  background-color: #1a1a1a;
+  color: var(--color-white);
+}
+
+.links {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.linksColumn {
+  flex: 1;
+}
+
+.linksHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.linksTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.chevron {
+  display: none;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.linksBody {
+  display: block;
+}
+
+.linksItem {
+  display: block;
+  font-size: 0.875rem;
+  color: #aaaaaa;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.linksItem:hover {
+  color: var(--color-white);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #555555;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acceptsTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.paymentIcons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.paymentIcon {
+  height: 36px;
+  border-radius: 4px;
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #333333;
+  font-size: 0.75rem;
+  color: #aaaaaa;
+  background-color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .newsletterContent {
+    flex-direction: column;
+    gap: 0;
+  }
+  .newsletterRight {
+    flex-direction: column;
+    gap: 0;
+  }
+  .newsletterForm {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .newsletterInput {
+    width: 100%;
+  }
+  .newsletterLeft {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 16px;
+  }
+  .contactBlock:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .contactBlock {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 12px;
+    min-width: auto;
+  }
+  .contactTitle {
+    font-size: 1rem;
+  }
+  .links {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 20px;
+  }
+  .linksColumn {
+    border-bottom: 1px solid #333333;
+    padding: 16px 0;
+  }
+  .linksHeader {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+  .chevron {
+    display: block;
+  }
+  .linksBody {
+    display: none;
+  }
+  .linksBodyOpen {
+    display: block;
+    padding-top: 16px;
+  }
+  .socialIcons {
+    margin-top: 8px;
+  }
+}

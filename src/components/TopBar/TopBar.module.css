@@ -1,0 +1,30 @@
+.topbar {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  padding: 8px 0;
+}
+
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .item:not(:nth-child(2)) {
+    display: none;
+  }
+  .content {
+    justify-content: center;
+  }
+}
