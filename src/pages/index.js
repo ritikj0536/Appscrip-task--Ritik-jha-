@@ -61,12 +61,18 @@ export default function Home({ products }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const res = await fetch('https://fakestoreapi.com/products');
     const products = await res.json();
-    return { props: { products } };
+    return { 
+      props: { products },
+      revalidate: 60
+    };
   } catch (error) {
-    return { props: { products: [] } };
+    return { 
+      props: { products: [] },
+      revalidate: 60
+    };
   }
 }
